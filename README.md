@@ -29,13 +29,14 @@ memory-debugging-lab/
 
 ## 실행 환경 안내
 
-- **Linux, macOS** — 도커/Dev Containers 로 실습합니다.
+- **Linux, macOS** — 도커/Dev Containers 로 실습합니다.git
 - **Windows** — 반드시 **Docker 백엔드가 WSL2 인지 확인**하세요. (Docker Desktop → Settings → General → *"Use the WSL 2 based engine"* 체크) WSL2(리눅스 커널) 위에서 Ubuntu+glibc 컨테이너가 돌아야 크래시 재현이 리눅스와 동일합니다. Hyper-V 백엔드도 리눅스 VM이라 동작하지만, "Windows 컨테이너" 모드로 실행하면 안 됩니다.
 - 크래시 유형(스택 스매싱, glibc double-free/invalid-pointer 감지 등)은 **리눅스 glibc 기준**입니다.
 같은 코드라도 다른 libc/OS 에서는 크래시 신호가 달라질 수 있어, 검증은 도커(Ubuntu)에서 하세요.
 - **검증 환경(컨테이너 기준):** Ubuntu 24.04 LTS · gcc 13 · glibc 2.39 · gdb 15. (호스트 OS/배포판은 무엇이든 무관 — 컨테이너 안에서 이 툴체인으로 실행됩니다.)
 
-### 도커로 실습 (gcc + gdb)
+
+### 도커로 실습 (gcc + gdb) 
 
 ```bash
 docker build -t memdbg .
